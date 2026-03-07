@@ -42,9 +42,6 @@ class Trie:
 
 if __name__ == "__main__":
     trie = Trie()
-    #with open("words.txt", "r") as f:
-    #    for line in f:
-    #        trie.insert(line.strip())
     with open("mobydick.txt", "r") as f:
         for line in f:
             a = line.split()
