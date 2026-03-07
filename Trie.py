@@ -1,4 +1,4 @@
-
+import re
 class TrieNode:
     def __init__(self) -> None:
         self.children = {}
@@ -46,7 +46,7 @@ if __name__ == "__main__":
         for line in f:
             a = line.split()
             for word in a:
-                word = word.strip(".,!?;:\"'()-")
+                word = re.sub(r'[^a-zA-Z]', '', word)
                 word = word.lower()
                 trie.insert(word)
     running = True
