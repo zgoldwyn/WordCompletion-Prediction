@@ -59,7 +59,6 @@ if __name__ == "__main__":
         completedlist = trie.complete(part, int(num))
         print(completedlist)
 
-    print(trie.complete("hel",5))  # should print ['hello', 'help', 'helpful']
-    print(trie.complete("wor",5))  # should print ['world']
-    print(trie.complete("xyz",5))  # should print []
+    print("Quitting...")
+
 
