@@ -1,4 +1,7 @@
 import re
+import sys
+
+
 class TrieNode:
     def __init__(self) -> None:
         self.children = {}
@@ -38,6 +41,25 @@ class Trie:
         for child in node.children: #for char in children,
             self.collect(node.children[child], prefix+child, results)#recurse with the child node, and the prefix with that string inclding the child char
 
+    def save(self, path: str) -> None:
+        import pickle
+        words = []
+        self.collect(self.root, "", words)
+        with open(path, "wb") as f:
+            pickle.dump(words, f)
+
+    def load(self, path: str) -> None:
+        import pickle
+        with open(path, "rb") as f:
+            words = pickle.load(f)
+        for word, freq in words:
+            node = self.root
+            for char in word:
+                if char not in node.children:
+                    node.children[char] = TrieNode()
+                node = node.children[char]
+            node.isEnd = True
+            node.freq = freq
 
 if __name__ == "__main__":
     trie = Trie()
