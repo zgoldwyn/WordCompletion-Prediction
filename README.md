@@ -1,6 +1,6 @@
 # Word Completion & Prediction
 ## What it does
-This program is an autocomplete and prediction model. It suggests words that are predicted to follow a word typed, and suggests the most likely completion of the word if currently typing a word. 
+This program is an autocomplete and prediction model. It suggests words that are predicted to follow a word typed, and suggests the most likely completion of the word if currently typing a word. Attached is a demo in which the model has been trained on the book Moby Dick. In order to autofill a suggestion, Tab is used. In order to exit the program, Esc is used. 
 ## How it works
 ### Trie (word completion)
 The project uses a Tree data structure made up of character nodes, having finished paths which represent a valid english word. It uses data from the Reddit Comments Dataset from Kaggle (1 million comments across 40 subreddits). 
@@ -22,3 +22,7 @@ I used a data source from Kaggle, but the program can also use an imessage "chat
 ##Design Decisions
 I decided to use a Trie over a list because it has O(k) time complexity for search given k is the already typed string. This differes from using a list of possible words and iterating through because time complexity would be O(n) for any case, even if there are only a few valid word options. 
 I decided to use statistical backoff because I am able to know exactly why the next word was chosen. Using a neural net would have other dependencies to worry about, and I wanted this project to be trained on data I provided.  
+
+
+https://github.com/user-attachments/assets/754db0dd-4206-4d91-96ab-674d995ba6ed
+
