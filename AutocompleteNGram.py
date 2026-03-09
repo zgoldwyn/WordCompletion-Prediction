@@ -18,7 +18,7 @@ def main(stdscr):
     readsql = selected[1]
     readcsv = selected[2]
     trainer = "mobydick.txt"
-    ngram = NGram.NGram(4)
+    ngram = NGram.NGram(4) #value of n (change this, but beware that larger values mean exponentially longer wait times for reading, serializing, and loading from cache
     trie = Trie.Trie()
 
     combo = f"{'f' if readfile else ''}{'s' if readsql else ''}{'c' if readcsv else ''}"
